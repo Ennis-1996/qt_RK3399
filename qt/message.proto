@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package aonuo;
+
+
+enum ResultType {
+ SUCCESS = 0;
+ FAILURE = 1;
+ SYS_ERROR = 2;
+}
+enum DeviceType {
+    APP = 0;
+    ROBOT = 1;
+}
+
+enum ActiveType {
+    INIT = 0;
+    ACTIVE = 1;
+    CLOSE = 2;
+}
+
+message Message {
+
+	string robotCode = 1;
+
+	ActiveType activeType = 2;
+
+	ResultType resultType = 3;
+
+	DeviceType deviceType = 4;
+
+	string module = 5;
+
+	string cmd = 6;
+
+}
